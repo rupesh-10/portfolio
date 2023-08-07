@@ -194,3 +194,16 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+
+function sendEmail(e) {
+    console.log('herhherhehrherher')
+    e.preventDefault();
+    let name = document.getElementById("name-input").value;
+    let email = document.getElementById("email-input").value;
+    let subject = document.getElementById("message-input").value;
+
+    let body = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}`;
+
+    console.log(body)
+  }
