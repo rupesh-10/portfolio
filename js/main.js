@@ -207,6 +207,14 @@ function sendEmail(e) {
     let subject = document.getElementById("message-input").value;
 
     let body = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}`;
+    Swal.fire(
+        `Thank you ${name} !`,
+        "Your message has been successfully sent! Thank you for reaching out. I'll get back to you as soon as possible.",
+        'success'
+      )
 
-    console.log(body)
+    //   empty all input fields
+    name = "";
+    email = "";
+    subject = "";
   }

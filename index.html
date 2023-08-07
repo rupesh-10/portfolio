@@ -529,9 +529,9 @@
 								class="portfolio-img"
 							/>
 							<div class="portfolio-data">
-								<h3 class="portfolio-title">Workzone</h3>
+								<h3 class="portfolio-title">Workzone 1</h3>
 								<p class="portfolio-description">
-									Workzone is a powerful time tracking and activity recording
+									Workzone1 is a powerful time tracking and activity recording
 									tool that helps users monitor their productivity by tracking
 									app and website usage, capturing screenshots, and recording
 									keystrokes and mouseclicks.
@@ -539,7 +539,8 @@
 									<a href="https://www.upwork.com/freelancers/~0123050fdc1567fa59?p=1535851387452395520"  target="__blank">Learn More</a>
 								</p>
 								<a
-									href="https://workzone.com"
+                                    target="_blank"
+									href="https://workzone1.com"
 									class="button button-flex button-small portfolio-button"
 								>
 									Visit Website <i class="fas fa-arrow-right button-icon"></i>
@@ -560,7 +561,7 @@
 									mobile games that people enjoy. Their mobile games are used by
 									young people all over the world.
 								</p>
-								<a
+								<a  target="_blank"
 									href="https://dvx.net/"
 									class="button button-flex button-small portfolio-button"
 								>
@@ -637,15 +638,15 @@
 						</div>
 					</div>
 
-					<form id="contact-form" class="contact-form grid">
-						<div class="contact-inputs grid">
+                    <form id="contact-form" class="contact-form grid">
+                    <div class="contact-inputs grid">
 							<div class="contact-content">
 								<label for="" class="contact-label">Name</label>
-								<input type="text" id="name-input" class="contact-input" required />
+								<input type="text" name="name" id="name-input" class="contact-input" required />
 							</div>
 							<div class="contact-content">
 								<label for="" class="contact-label">Email</label>
-								<input type="email" id="email-input" class="contact-input" required/>
+								<input type="email" name="email" id="email-input" class="contact-input" required/>
 							</div>
 						</div>
 						<div class="grid">
@@ -654,6 +655,7 @@
 								<textarea
 									style="resize: none"
 									rows="5"
+                                    name="message"
                                     id="message-input"
 									class="contact-input"
                                     required
@@ -717,6 +719,8 @@
 			src="https://kit.fontawesome.com/027d3564f6.js"
 			crossorigin="anonymous"
 		></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 		<!-- SWIPER JS -->
 		<script src="js/swiper-bundle.js"></script>
