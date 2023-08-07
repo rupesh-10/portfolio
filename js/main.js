@@ -196,8 +196,11 @@ themeButton.addEventListener("click", () => {
 });
 
 
+
+// Contact Form
+const form = document.getElementById("contact-form");
+form.addEventListener("submit", sendEmail);
 function sendEmail(e) {
-    console.log('herhherhehrherher')
     e.preventDefault();
     let name = document.getElementById("name-input").value;
     let email = document.getElementById("email-input").value;
