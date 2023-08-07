@@ -454,6 +454,8 @@ img {
 
 .qualification-active[data-content] {
   display: block;
+  width:600px;
+  max-width:100%;
 }
 
 .qualification-data {
