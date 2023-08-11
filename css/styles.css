@@ -199,6 +199,12 @@ img {
   font-weight: var(--font-medium);
 }
 
+.header .nav-logo span{
+    font-size: var(--h1-font-size);
+    font-family: cursive;
+    color: var(--first-color);
+}
+
 .header .nav-logo:hover, .header .nav-toggle:hover {
   color: var(--first-color);
 }
@@ -763,6 +769,11 @@ img {
 .footer-container .footer-title {
   font-size: var(--h1-font-size);
   margin-bottom: var(--mb-0-25);
+}
+
+.footer-container .footer-title span{
+    font-size: var(--big-font-size);
+    font-family: cursive;
 }
 
 .footer-container .footer-subtitle {
