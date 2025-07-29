@@ -331,7 +331,7 @@ if (selectedTheme) {
 
 // Initialize EmailJS
 (function() {
-  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key from EmailJS
+  emailjs.init("IhO105XMZiiOyq7hH"); // Replace with your actual public key from EmailJS
 })();
 
 // Contact Form
@@ -366,7 +366,7 @@ function sendEmail(e) {
   };
 
   // Send email using EmailJS
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+  emailjs.send('service_s0aj0sa', 'template_k5bpc7g', templateParams)
     .then(function(response) {
       console.log('SUCCESS!', response.status, response.text);
       

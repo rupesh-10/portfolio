@@ -29,6 +29,10 @@ const themeContent = {
     projectsTitle: "The Bat-Portfolio",
     projectsSubtitle: "My Greatest Digital Victories",
     
+    // Testimonials Section
+    testimonialsTitle: "Gotham's Reviews",
+    testimonialsSubtitle: "What Citizens Say About The Dark Developer",
+    
     // Contact Section
     contactTitle: "Send The Bat-Signal",
     contactSubtitle: "Got a project that needs saving?",
@@ -69,6 +73,10 @@ const themeContent = {
     // Projects Section
     projectsTitle: "Super Project Gallery",
     projectsSubtitle: "Saving The Digital World, One App At A Time",
+    
+    // Testimonials Section
+    testimonialsTitle: "Metropolis Reviews",
+    testimonialsSubtitle: "What Heroes and Citizens Say About The Code of Steel",
     
     // Contact Section
     contactTitle: "Call For Super Help",
@@ -148,6 +156,13 @@ function updateThemeContent(theme) {
   
   if (projectsTitle) projectsTitle.textContent = content.projectsTitle;
   if (projectsSubtitle) projectsSubtitle.textContent = content.projectsSubtitle;
+  
+  // Update Testimonials Section
+  const testimonialsTitle = document.querySelector('#testimonials .section-title');
+  const testimonialsSubtitle = document.querySelector('#testimonials .section-subtitle');
+  
+  if (testimonialsTitle) testimonialsTitle.textContent = content.testimonialsTitle;
+  if (testimonialsSubtitle) testimonialsSubtitle.textContent = content.testimonialsSubtitle;
   
   // Update Contact Section
   const contactTitle = document.querySelector('#contact .section-title');
