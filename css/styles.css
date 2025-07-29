@@ -34,8 +34,8 @@
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
   /* Font and typography */
-  --body-font: "Inter", "Roboto", sans-serif;
-  --modern-font: "Inter", "Roboto", sans-serif;
+  --body-font: "Space Mono", "Inter", "Roboto", monospace;
+  --modern-font: "Space Mono", "Inter", "Roboto", monospace;
   /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -680,18 +680,18 @@ body.batman-theme {
   --input-color: #16213e;
   --body-color: #0f0f23;
   --container-color: rgba(26, 26, 46, 0.9);
-  --body-font: "Inter", "Roboto", sans-serif;
+  --body-font: "Space Mono", "Inter", "Roboto", monospace;
 }
 
 /* Batman theme font styling - Apply to headings and navbar */
 body.batman-theme .home-data-title {
-  font-family: 'Batman', "Inter", sans-serif;
+  font-family: 'Batman', "Space Mono", "Inter", sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 body.batman-theme .home-data-subtitle {
-  font-family: 'Batman', "Inter", sans-serif;
+  font-family: 'Batman', "Space Mono", "Inter", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -701,13 +701,13 @@ body.batman-theme .section-title,
 body.batman-theme h1,
 body.batman-theme h2,
 body.batman-theme h3 {
-  font-family: 'Batman', "Inter", sans-serif;
+  font-family: 'Batman', "Space Mono", "Inter", sans-serif;
   letter-spacing: 1px;
   font-weight: 600;
 }
 
 body.batman-theme .button {
-  font-family: 'Batman', "Inter", sans-serif;
+  font-family: 'Batman', "Space Mono", "Inter", sans-serif;
   letter-spacing: 0.5px;
   font-weight: 500;
 }
@@ -819,19 +819,19 @@ body.superman-theme {
   --input-color: #f7fafc;
   --body-color: #ffffff;
   --container-color: rgba(247, 250, 252, 0.95);
-  --body-font: "Inter", "Roboto", sans-serif;
+  --body-font: "Space Mono", "Inter", "Roboto", monospace;
 }
 
 /* Superman theme font styling - Apply to headings and navbar */
 body.superman-theme .home-data-title {
-  font-family: 'Superman', "Inter", sans-serif;
+  font-family: 'Superman', "Space Mono", "Inter", sans-serif;
   letter-spacing: 2px;
   line-height: 1.6;
   text-transform: uppercase;
 }
 
 body.superman-theme .home-data-subtitle {
-  font-family: 'Superman', "Inter", sans-serif;
+  font-family: 'Superman', "Space Mono", "Inter", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -841,13 +841,13 @@ body.superman-theme .section-title,
 body.superman-theme h1,
 body.superman-theme h2,
 body.superman-theme h3 {
-  font-family: 'Superman', "Inter", sans-serif;
+  font-family: 'Superman', "Space Mono", "Inter", sans-serif;
   letter-spacing: 1px;
   font-weight: 600;
 }
 
 body.superman-theme .button {
-  font-family: 'Superman', "Inter", sans-serif;
+  font-family: 'Superman', "Space Mono", "Inter", sans-serif;
   letter-spacing: 0.5px;
   font-weight: 500;
 }
@@ -1297,7 +1297,7 @@ body.batman-theme .project-card:hover {
 
 body.batman-theme .project-title {
   color: #eee !important;
-  font-family: 'Batman', "Inter", sans-serif !important;
+  font-family: 'Batman', "Space Mono", "Inter", sans-serif !important;
   letter-spacing: 2px !important;
   text-transform: uppercase !important;
   font-weight: normal !important;
@@ -1335,7 +1335,7 @@ body.superman-theme .project-card:hover {
 
 body.superman-theme .project-title {
   color: #1a365d !important;
-  font-family: 'Superman', "Inter", sans-serif !important;
+  font-family: 'Superman', "Space Mono", "Inter", sans-serif !important;
   letter-spacing: 2px !important;
   text-transform: uppercase !important;
   font-weight: normal !important;
@@ -1799,23 +1799,27 @@ body.superman-theme .tech-card:hover .tech-name {
 
 .contact-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
   margin-bottom: 3rem;
   justify-items: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-information {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1.5rem;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
   background: var(--container-color);
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  min-height: 80px;
+  min-height: 60px;
+  width: 100%;
 }
 
 .contact-information:hover {
@@ -1823,10 +1827,11 @@ body.superman-theme .tech-card:hover .tech-name {
 }
 
 .contact-icon {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: var(--first-color);
   font-family: var(--body-font);
   margin: 0;
+  flex-shrink: 0;
 }
 .contact-form {
   background: var(--container-color);
@@ -2772,7 +2777,7 @@ body.superman-theme .home-blob #blob-fill {
 }
 
 .contact-container .contact-information .contact-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--first-color);
   margin-right: var(--mb-0-75);
 }
@@ -2819,10 +2824,6 @@ body.superman-theme .home-blob #blob-fill {
   padding: 2rem 0 3rem;
 }
 
-.footer-container {
-  row-gap: 3.5rem;
-}
-
 .footer-container .footer-title {
   font-size: var(--h1-font-size);
   margin-bottom: var(--mb-0-25);
@@ -2835,16 +2836,6 @@ body.superman-theme .home-blob #blob-fill {
 
 .footer-container .footer-subtitle {
   font-size: var(--small-font-size);
-}
-
-.footer-container .footer-links {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
-}
-
-.footer-container .footer-links .footer-link:hover {
-  color: var(--first-color-lighter);
 }
 
 .footer-container .footer-social {
@@ -2865,7 +2856,6 @@ body.superman-theme .home-blob #blob-fill {
 
 .footer .footer-title,
 .footer .footer-subtitle,
-.footer .footer-link,
 .footer .footer-social {
   color: #fff;
 }
@@ -3024,10 +3014,13 @@ body.superman-theme .home-blob #blob-fill {
   }
   .contact-items {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
   }
   .contact-items .contact-information {
     align-items: center;
+    min-width: 280px;
   }
   .contact-form {
     grid-template-columns: 1fr;
@@ -3046,18 +3039,41 @@ body.superman-theme .home-blob #blob-fill {
   }
   
   .footer-container {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
   }
-  .footer-container .footer-texts,
-  .footer-container .footer-links,
-  .footer-container .footer-socials {
+  .footer-content,
+  .footer-socials {
     text-align: center;
     align-self: center;
+    width: 100%;
   }
-  .footer-container .footer-socials {
+  .footer-socials {
     display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.5rem 0 1rem 0;
+    padding: 1rem 0 0.5rem 0;
+  }
+  .footer-link {
+    font-size: 0.9rem;
+  }
+  
+  /* Scroll to top button mobile adjustments */
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
   }
 }
 
@@ -3205,14 +3221,6 @@ body.superman-theme .home-blob #blob-fill {
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
-  }
-  .footer-links {
-    display: flex;
-    flex-direction: row !important;
-    align-items: center;
-  }
-  .footer-links .footer-link {
-    margin-left: var(--mb-1);
   }
 }
 
@@ -3566,14 +3574,17 @@ body.superman-theme .footer {
 }
 
 .footer-container {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
   margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 
 .footer-content {
   text-align: center;
+  flex: 1;
 }
 
 .footer-logo-container {
@@ -3581,14 +3592,163 @@ body.superman-theme .footer {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .footer-logo {
-  width: 110px;
-  height: 110px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   transition: all 0.3s ease;
+  display: block;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.footer-social {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social:hover {
+  color: var(--first-color);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: var(--body-font);
+}
+
+.footer-link:hover {
+  color: var(--first-color);
+  transform: translateY(-1px);
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 50%;
+  background-color: var(--first-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Batman theme footer links */
+body.batman-theme .footer-link {
+  font-family: 'Batman', var(--body-font);
+  font-weight: 600;
+}
+
+body.batman-theme .footer-link:hover {
+  color: #dc2626;
+}
+
+body.batman-theme .footer-link::after {
+  background-color: #dc2626;
+}
+
+/* Superman theme footer links */
+body.superman-theme .footer-link {
+  font-family: 'Superman', var(--body-font);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+body.superman-theme .footer-link:hover {
+  color: #ffd700;
+}
+
+body.superman-theme .footer-link::after {
+  background-color: #ffd700;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--first-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.scroll-to-top.show {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background: var(--first-color-alt);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-1px);
+}
+
+/* Theme-specific scroll button colors */
+body.batman-theme .scroll-to-top {
+  background: #ffd700;
+  color: #000;
+}
+
+body.batman-theme .scroll-to-top:hover {
+  background: #ffed4e;
+}
+
+body.superman-theme .scroll-to-top {
+  background: #dc2626;
+  color: white;
+}
+
+body.superman-theme .scroll-to-top:hover {
+  background: #b91c1c;
 }
 
 .footer-title {
@@ -3599,30 +3759,6 @@ body.superman-theme .footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-}
-
-.footer-link {
-  color: inherit;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-}
-
-.footer-link:hover {
-  color: var(--accent-color);
-  transform: translateX(5px);
 }
 
 .footer-socials {
@@ -3684,12 +3820,8 @@ body.superman-theme .footer {
     justify-content: flex-start;
   }
   
-  .footer-links {
-    align-items: flex-start;
-  }
-  
   .footer-socials {
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 
@@ -3700,11 +3832,22 @@ body.superman-theme .footer {
   
   .footer-container {
     gap: 4rem;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   .footer-logo {
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .footer-links {
+    gap: 2.5rem;
+    margin: 2.5rem 0 1.5rem 0;
+  }
+  
+  .footer-link {
+    font-size: 1rem;
   }
   
   .footer-title {

@@ -488,11 +488,51 @@ function calculateExperience() {
 // Calculate experience when DOM is loaded and also when script loads
 document.addEventListener('DOMContentLoaded', () => {
   calculateExperience();
+  initScrollToTop();
 });
 
 // Also try to calculate immediately in case DOM is already loaded
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', calculateExperience);
+  document.addEventListener('DOMContentLoaded', () => {
+    calculateExperience();
+    initScrollToTop();
+  });
 } else {
   calculateExperience();
+  initScrollToTop();
+}
+
+/* SCROLL TO TOP FUNCTIONALITY */
+function initScrollToTop() {
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+  const homeSection = document.getElementById('home');
+  
+  if (!scrollToTopBtn || !homeSection) return;
+  
+  // Show/hide scroll to top button based on scroll position
+  function toggleScrollButton() {
+    const homeSectionHeight = homeSection.offsetHeight;
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollPosition > homeSectionHeight) {
+      scrollToTopBtn.classList.add('show');
+    } else {
+      scrollToTopBtn.classList.remove('show');
+    }
+  }
+  
+  // Smooth scroll to top function
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  
+  // Event listeners
+  window.addEventListener('scroll', toggleScrollButton);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+  
+  // Initial check
+  toggleScrollButton();
 }

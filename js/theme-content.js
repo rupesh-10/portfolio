@@ -38,7 +38,7 @@ const themeContent = {
     contactSubtitle: "Got a project that needs saving?",
     
     // Footer
-    footerCopy: "© 2025 The Code Knight. All rights reserved. No bats were harmed in the making of this website.",
+    footerCopy: "© {year} The Code Knight. All rights reserved. No bats were harmed in the making of this website.",
     
     // Experience
     experienceTitle: "Years Fighting Bugs",
@@ -47,7 +47,7 @@ const themeContent = {
   
   superman: {
     // Home Section
-    title: "I'm Rupesh, The Code of Steel",
+    title: "I'm Rupesh, The Man of Code",
     subtitle: "Metropolis's Super Developer",
     description: "Faster than a slow database query, more powerful than a crashed server, able to debug complex applications in a single session! I'm not from Krypton, but my code might as well be from another planet (in a good way).",
     contactButton: "Save The Day",
@@ -76,14 +76,14 @@ const themeContent = {
     
     // Testimonials Section
     testimonialsTitle: "Metropolis Reviews",
-    testimonialsSubtitle: "What Heroes and Citizens Say About The Code of Steel",
+    testimonialsSubtitle: "What Heroes and Citizens Say About The Man of Code",
     
     // Contact Section
     contactTitle: "Call For Super Help",
     contactSubtitle: "Need a hero for your next project?",
     
     // Footer
-    footerCopy: "© 2025 The Code of Steel. All rights reserved. No phone booths were used as development environments.",
+    footerCopy: "© {year} The Man of Code. All rights reserved. No phone booths were used as development environments.",
     
     // Experience
     experienceTitle: "Years of Super Service",
@@ -180,7 +180,11 @@ function updateThemeContent(theme) {
   
   // Update Footer
   const footerCopy = document.querySelector('.footer-copy');
-  if (footerCopy) footerCopy.innerHTML = content.footerCopy;
+  if (footerCopy) {
+    const currentYear = new Date().getFullYear();
+    const footerText = content.footerCopy.replace('{year}', currentYear);
+    footerCopy.innerHTML = footerText;
+  }
   
   // Reinitialize Lucide icons after content update
   if (typeof lucide !== 'undefined') {
