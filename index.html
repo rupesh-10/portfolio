@@ -1,198 +1,426 @@
-<html>
-	<head>
-		<title>Rupesh Dhakal - Full Stack Developer</title>
-	</head>
-	<body>
-		<style>
-		  body{
-				height: 100vh;
-        overflow: hidden;
-				width: 100%;
-				text-align: center;
-			}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rupesh Dhakal | Full Stack Developer</title>
+  <meta name="Description" content="Rupesh Dhakal">
+  <meta name="Keyword" content="Rupesh Dhakal">
+  <meta name="author" content="Rupesh Dhakal">
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+   <body>
+      <!-- Header -->
+      <nav class="nav">
+        <div class="nav__container">
+          <div class="nav__menu">
+            <ul class="nav__list">
+              <li class="nav__item nav__logo-item">
+                <img src="img/batman-logo.png" alt="Logo" class="nav__logo-img" id="nav-logo">
+              </li>
+              <li class="nav__item">
+                <a href="#home" class="nav__link">Home</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about" class="nav__link">About</a>
+              </li>
+              <li class="nav__item">
+                <a href="#services" class="nav__link">Services</a>
+              </li>
+              <li class="nav__item">
+                <a href="#projects" class="nav__link">Projects</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contact" class="nav__link">Contact</a>
+              </li>
+              <li class="nav__item theme-selector">
+                <div class="theme-toggle">
+                  <button class="theme-btn batman-theme" data-theme="batman">
+                    <img src="img/portfolios/batman.svg" alt="Batman Theme">
+                  </button>
+                  <button class="theme-btn superman-theme" data-theme="superman">
+                    <img src="img/portfolios/superman.svg" alt="Superman Theme">
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <!-- Add your main content sections here -->
+      <section class="home section" id="home">
+        <div class="home-container container grid">
+          <div class="home-content grid">
+            <div class="home-social">
+              <a
+                href="https://www.linkedin.com/in/rupesh-dhakal-87ab5194/"
+                target="_blank"
+                class="home-social-icon"
+              >
+                <i data-lucide="linkedin"></i>
+              </a>
+              <a
+                href="https://github.com/rupesh-10"
+                target="_blank"
+                class="home-social-icon"
+              >
+                <i data-lucide="github"></i>
+              </a>
+            </div>
+            <div class="home-data">
+              <h1 class="home-data-title">Hello, I'm Rupesh Dhakal</h1>
+              <h3 class="home-data-subtitle">Full-Stack Developer</h3>
+              <p class="home-data-description">
+                Passionate about creating innovative web solutions with modern technologies and clean, efficient code.
+              </p>
+              <a href="#contact" class="button button-flex">
+                Contact Me <i data-lucide="send"></i>
+              </a>
+            </div>
+          </div>
+          <div class="home-scroll">
+            <a href="#about" class="home-scroll-button button-flex">
+              <span class="home-scroll-button-name">Scroll down</span>
+              <i data-lucide="arrow-down"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <section id="about" class="about section">
+        <div class="about-container container">
+          <h1 class="section-title">About Me</h1>
+          <p class="about-description">
+            I'm a Full-Stack Developer from Nepal, passionate about creating innovative web solutions with modern technologies. Currently pursuing my Master's in AI Research while delivering high-quality projects to clients worldwide.
+          </p>
+          
+          <div class="about-stats">
+            <div class="about-card">
+              <h3 class="about-card-number" id="experience-years"></h3>
+              <p class="about-card-title">Years of Experience</p>
+            </div>
+            <div class="about-card">
+              <div class="about-card-icon">
+                <img src="img/top-rated.png" alt="Top Rated" class="about-card-image">
+              </div>
+              <p class="about-card-title">In Upwork</p>
+            </div>
+            <div class="about-card">
+              <h3 class="about-card-number">100%</h3>
+              <p class="about-card-title">Job Success Score</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- WHAT DO I DO SECTION -->
+      <section id="services" class="services section">
+        <div class="container">
+          <h1 class="section-title">What Do I Do</h1>
+          <p class="section-subtitle">Unlocking a World of Tailored Web Solutions</p>
+          
+          <div class="services-accordion-container">
+            <div class="accordion" id="servicesAccordion">
+              <!-- Frontend Development -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFrontend">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFrontend" aria-expanded="false" aria-controls="collapseFrontend">
+                    <img src="img/frontend.png" alt="Frontend Development" class="accordion-icon me-3">
+                    <span class="accordion-title">Frontend Development</span>
+                  </button>
+                </h2>
+                <div id="collapseFrontend" class="accordion-collapse collapse" aria-labelledby="headingFrontend" data-bs-parent="#servicesAccordion">
+                  <div class="accordion-body">
+                    <p class="service-description mb-4">
+                      Creating beautiful, responsive, and user-friendly interfaces with modern technologies and best practices.
+                    </p>
+                    <div class="row g-3">
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/html.png" alt="HTML" class="tech-image">
+                          <span class="tech-name">HTML</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/css.png" alt="CSS" class="tech-image">
+                          <span class="tech-name">CSS</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/js.png" alt="JavaScript" class="tech-image">
+                          <span class="tech-name">JavaScript</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/react.png" alt="React" class="tech-image">
+                          <span class="tech-name">React JS</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/vue.svg" alt="Vue" class="tech-image">
+                          <span class="tech-name">Vue JS</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/next.svg" alt="Next.js" class="tech-image">
+                          <span class="tech-name">Next JS</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/nuxt.svg" alt="Nuxt" class="tech-image">
+                          <span class="tech-name">Nuxt</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/tailwind.svg" alt="Tailwind" class="tech-image">
+                          <span class="tech-name">Tailwind</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Backend Development -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingBackend">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBackend" aria-expanded="false" aria-controls="collapseBackend">
+                    <img src="img/backend.png" alt="Backend Development" class="accordion-icon me-3">
+                    <span class="accordion-title">Backend Development</span>
+                  </button>
+                </h2>
+                <div id="collapseBackend" class="accordion-collapse collapse" aria-labelledby="headingBackend" data-bs-parent="#servicesAccordion">
+                  <div class="accordion-body">
+                    <p class="service-description mb-4">
+                      Building robust server-side applications, APIs, and database systems that power your applications.
+                    </p>
+                    <div class="row g-3">
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/php.svg" alt="PHP" class="tech-image">
+                          <span class="tech-name">PHP</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/laravel.svg" alt="Laravel" class="tech-image">
+                          <span class="tech-name">Laravel</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/node.svg" alt="Node.js" class="tech-image">
+                          <span class="tech-name">Node.js</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/lumen.svg" alt="Lumen" class="tech-image">
+                          <span class="tech-name">Lumen</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/database.svg" alt="Database" class="tech-image">
+                          <span class="tech-name">SQL</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Mobile Development -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingMobile">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMobile" aria-expanded="false" aria-controls="collapseMobile">
+                    <img src="img/mobile.png" alt="Mobile Development" class="accordion-icon me-3">
+                    <span class="accordion-title">Mobile Development</span>
+                  </button>
+                </h2>
+                <div id="collapseMobile" class="accordion-collapse collapse" aria-labelledby="headingMobile" data-bs-parent="#servicesAccordion">
+                  <div class="accordion-body">
+                    <p class="service-description mb-4">
+                      Developing cross-platform mobile applications with native performance and modern UI/UX design.
+                    </p>
+                    <div class="row g-3">
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/flutter.svg" alt="Flutter" class="tech-image">
+                          <span class="tech-name">Flutter</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/react.png" alt="React Native" class="tech-image">
+                          <span class="tech-name">React Native</span>
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="tech-card">
+                          <img src="img/services/firebase.svg" alt="Firebase" class="tech-image">
+                          <span class="tech-name">Firebase</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="projects-section">
+        <div class="container">
+          <h1 class="section-title">Projects</h1>
+          <p class="section-subtitle">A showcase of my recent work and achievements</p>
+          
+          <div class="projects-grid">
+            <!-- Project cards will be dynamically generated by JavaScript -->
+          </div>
+        </div>
+      </section>
+      
+      <section id="contact" class="contact section">
+        <div class="container">
+          <h1 class="section-title">Get In Touch</h1>
+          <p class="section-subtitle">Let's discuss your next project</p>
+          
+          <div class="contact-container grid">
+            <div class="contact-items">
+              <div class="contact-information">
+                <i data-lucide="phone" class="contact-icon"></i>
+                <div>
+                  <span class="contact-subtitle">+977 9741680731</span>
+                </div>
+              </div>
+              
+              <div class="contact-information">
+                <i data-lucide="mail" class="contact-icon"></i>
+                <div>
+                  <span class="contact-subtitle">rupeshdhakal2@gmail.com</span>
+                </div>
+              </div>
+              
+              <div class="contact-information">
+                <i data-lucide="map-pin" class="contact-icon"></i>
+                <div>
+                  <span class="contact-subtitle">Kathmandu, Nepal</span>
+                </div>
+              </div>
+            </div>
 
-      .content-area {
-        height: 100vh;
-      }
-
-			.d-flex {
-				display: flex;
-			}
-			.align-items-center {
-				align-items: center;
-			}
-			.justify-content-center {
-				justify-content: center;
-			}
-
-			/* make keyframes that tell the start state and the end state of our object */
-			@-webkit-keyframes fadeIn {
-				from {
-					opacity: 0;
-				}
-				to {
-					opacity: 1;
-				}
-			}
-			@-moz-keyframes fadeIn {
-				from {
-					opacity: 0;
-				}
-				to {
-					opacity: 1;
-				}
-			}
-			@keyframes fadeIn {
-				from {
-					opacity: 0;
-				}
-				to {
-					opacity: 1;
-				}
-			}
-
-			.fade-in {
-				opacity: 0; /* make things invisible upon start */
-				-webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-				-moz-animation: fadeIn ease-in 1;
-				animation: fadeIn ease-in 1;
-
-				-webkit-animation-fill-mode: forwards; /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-				-moz-animation-fill-mode: forwards;
-				animation-fill-mode: forwards;
-
-				-webkit-animation-duration: 0.7s;
-				-moz-animation-duration: 0.7s;
-				animation-duration: 0.7s;
-				&.one {
-					-webkit-animation-delay: 0.7s;
-					-moz-animation-delay: 0.7s;
-					animation-delay: 0.7s;
-				}
-
-				&.two {
-					-webkit-animation-delay: 1s;
-					-moz-animation-delay: 1s;
-					animation-delay: 1s;
-				}
-				&.three {
-					-webkit-animation-delay: 1.2s;
-					-moz-animation-delay: 1.2s;
-					animation-delay: 1.2s;
-				}
-			}
-
-			.logo {
-				max-width: 480px;
-				width: 80%;
-				display: block;
-				margin: 0 auto;
-			}
-
-			h3 {
-				font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-					"Courier New", monospace;
-				letter-spacing: 5px;
-				text-transform: uppercase;
-				font-weight: 100;
-				color: rgba(#000, 0.8);
-			}
-			.social {
-				display: flex;
-				gap: 30px;
-				justify-content: center;
-				align-items: center;
-			}
-			.copy-right {
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				left: 0;
-				text-align: center;
-				padding-bottom: 15px;
-				font-size: 12px;
-				color: rgba(#000, 0.5);
-			}
-
-			.logo {
-				font-family: cursive;
-				font-size: 50px;
-			}
-		</style>
-		<div class="content-area d-flex align-items-center justify-content-center">
-			<div>
-				<div class="logo"><span>R</span>upesh</div>
-				<h3 class="fade-in two">🚀Launching soon🚀</h3>
-				<div class="social fade-in three">
-					<a
-						href="https://www.linkedin.com/in/rupesh-dhakal-87ab5194/"
-						taget="_blank"
-					>
-						<svg
-							width="64px"
-							height="64px"
-							viewBox="0 0 32 32"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-							<g
-								id="SVGRepo_tracerCarrier"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							></g>
-							<g id="SVGRepo_iconCarrier">
-								<rect
-									x="2"
-									y="2"
-									width="28"
-									height="28"
-									rx="14"
-									fill="#1275B1"
-								></rect>
-								<path
-									d="M12.6186 9.69215C12.6186 10.6267 11.8085 11.3843 10.8093 11.3843C9.81004 11.3843 9 10.6267 9 9.69215C9 8.7576 9.81004 8 10.8093 8C11.8085 8 12.6186 8.7576 12.6186 9.69215Z"
-									fill="white"
-								></path>
-								<path
-									d="M9.24742 12.6281H12.3402V22H9.24742V12.6281Z"
-									fill="white"
-								></path>
-								<path
-									d="M17.3196 12.6281H14.2268V22H17.3196C17.3196 22 17.3196 19.0496 17.3196 17.2049C17.3196 16.0976 17.6977 14.9855 19.2062 14.9855C20.911 14.9855 20.9008 16.4345 20.8928 17.5571C20.8824 19.0244 20.9072 20.5219 20.9072 22H24V17.0537C23.9738 13.8954 23.1508 12.4401 20.4433 12.4401C18.8354 12.4401 17.8387 13.1701 17.3196 13.8305V12.6281Z"
-									fill="white"
-								></path>
-							</g>
-						</svg>
-					</a>
-
-					<a href="https://github.com/rupesh-10" taget="_blank">
-						<svg
-							width="64px"
-							height="64px"
-							viewBox="0 0 32 32"
-							version="1.1"
-							xmlns="http://www.w3.org/2000/svg"
-							xmlns:xlink="http://www.w3.org/1999/xlink"
-							fill="#000000"
-						>
-							<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-							<g
-								id="SVGRepo_tracerCarrier"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							></g>
-							<g id="SVGRepo_iconCarrier">
-								<path
-									fill="#444444"
-									d="M19.906 17.847c0.429 0 0.79 0.21 1.102 0.636 0.31 0.422 0.468 0.944 0.468 1.56 0 0.619-0.156 1.141-0.468 1.563s-0.678 0.634-1.102 0.634c-0.451 0-0.839-0.21-1.151-0.634-0.307-0.422-0.465-0.944-0.465-1.563s0.153-1.139 0.465-1.56c0.312-0.427 0.702-0.636 1.151-0.636zM25.425 12.132c1.202 1.303 1.809 2.884 1.809 4.738 0 1.203-0.142 2.286-0.415 3.249-0.278 0.958-0.629 1.743-1.048 2.343-0.427 0.605-0.943 1.136-1.565 1.585-0.622 0.461-1.195 0.79-1.712 1.002s-1.112 0.376-1.785 0.49c-0.665 0.117-1.168 0.18-1.517 0.198-0.336 0.015-0.702 0.022-1.097 0.022-0.088 0-0.385 0.010-0.879 0.024-0.482 0.020-0.896 0.029-1.218 0.029s-0.736-0.010-1.218-0.029c-0.49-0.015-0.79-0.024-0.879-0.024-0.395 0-0.764-0.005-1.098-0.022-0.35-0.017-0.852-0.080-1.514-0.198-0.676-0.112-1.268-0.273-1.787-0.49-0.517-0.21-1.089-0.541-1.708-1.002-0.624-0.454-1.141-0.983-1.568-1.585-0.419-0.6-0.772-1.385-1.048-2.343-0.272-0.963-0.414-2.046-0.414-3.249 0-1.854 0.605-3.435 1.81-4.738-0.133-0.065-0.14-0.714-0.021-1.952 0.107-1.239 0.37-2.38 0.797-3.421 1.503 0.16 3.352 1.008 5.567 2.539 0.748-0.195 1.772-0.295 3.078-0.295 1.37 0 2.394 0.1 3.079 0.295 1.009-0.681 1.975-1.239 2.896-1.663 0.936-0.419 1.609-0.667 2.033-0.731l0.634-0.145c0.429 1.041 0.692 2.185 0.8 3.421 0.124 1.237 0.117 1.887-0.015 1.952zM16.052 24.683c2.703 0 4.741-0.324 6.125-0.973 1.38-0.651 2.082-1.99 2.082-4.008 0-1.17-0.441-2.15-1.322-2.932-0.454-0.424-0.985-0.681-1.595-0.781-0.595-0.098-1.514-0.098-2.755 0-1.236 0.1-2.082 0.145-2.537 0.145-0.619 0-1.291-0.033-2.125-0.098-0.834-0.062-1.487-0.102-1.954-0.122-0.478-0.015-0.986 0.045-1.538 0.172-0.557 0.133-1.008 0.357-1.373 0.681-0.84 0.75-1.266 1.725-1.266 2.932 0 2.019 0.684 3.357 2.050 4.006 1.365 0.653 3.397 0.975 6.101 0.975zM12.143 17.847c0.424 0 0.789 0.21 1.098 0.636 0.31 0.422 0.467 0.944 0.467 1.56 0 0.619-0.155 1.141-0.467 1.563-0.309 0.422-0.677 0.634-1.098 0.634-0.455 0-0.841-0.21-1.153-0.634-0.309-0.422-0.467-0.944-0.467-1.563s0.155-1.139 0.467-1.56c0.312-0.427 0.699-0.636 1.153-0.636z"
-								></path>
-							</g>
-						</svg>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="copy-right">&copy; 2024 Rupesh</div>
-	</body>
+            <form id="contact-form" class="contact-form grid">
+              <div class="contact-inputs grid">
+                <div class="contact-content">
+                  <label for="name-input" class="contact-label">Name</label>
+                  <input type="text" name="name" id="name-input" class="contact-input" required />
+                </div>
+                <div class="contact-content">
+                  <label for="email-input" class="contact-label">Email</label>
+                  <input type="email" name="email" id="email-input" class="contact-input" required />
+                </div>
+              </div>
+              <div class="contact-content">
+                <label for="subject-input" class="contact-label">Subject</label>
+                <input type="text" name="subject" id="subject-input" class="contact-input" required />
+              </div>
+              <div class="contact-content">
+                <label for="message-input" class="contact-label">Message</label>
+                <textarea
+                  style="resize: none"
+                  rows="5"
+                  name="message"
+                  id="message-input"
+                  class="contact-input"
+                  required
+                ></textarea>
+              </div>
+              <div class="contact-button">
+                <button type="submit" class="button button-flex">
+                  Send Message <i data-lucide="send"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-bg"></div>
+        <div class="container">
+          <div class="footer-container grid">
+            <div class="footer-content">
+              <div class="footer-logo-container">
+                <img src="img/batman-logo.png" alt="Logo" class="footer-logo" id="footer-logo">
+                <h1 class="footer-title">Rupesh Dhakal</h1>
+              </div>
+            </div>
+            
+            <ul class="footer-links">
+              <li>
+                <a href="#about" class="footer-link">About</a>
+              </li>
+              <li>
+                <a href="#services" class="footer-link">Services</a>
+              </li>
+              <li>
+                <a href="#projects" class="footer-link">Projects</a>
+              </li>
+              <li>
+                <a href="#contact" class="footer-link">Contact</a>
+              </li>
+            </ul>
+            
+            <div class="footer-socials">
+              <a href="https://www.linkedin.com/in/rupesh-dhakal-87ab5194/" target="_blank" class="footer-social">
+                <i data-lucide="linkedin"></i>
+              </a>
+              <a href="https://github.com/rupesh-10" target="_blank" class="footer-social">
+                <i data-lucide="github"></i>
+              </a>
+              <a href="mailto:rupeshdhakal2@gmail.com" class="footer-social">
+                <i data-lucide="mail"></i>
+              </a>
+            </div>
+          </div>
+          
+          <p class="footer-copy">&#169; 2025 Rupesh Dhakal. All rights reserved.</p>
+        </div>
+      </footer>
+      
+      <!-- Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Projects JS -->
+      <script src="js/projects.js"></script>
+      <!-- Scripts -->
+      <script src="js/main.js"></script>
+      <!-- Initialize Lucide Icons -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+          }
+        });
+      </script>
+   </body>
 </html>

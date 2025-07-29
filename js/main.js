@@ -1,3 +1,154 @@
+/* THEME SWITCHING */
+const themeButtons = document.querySelectorAll('.theme-btn');
+const body = document.body;
+
+// Load saved theme from localStorage
+const savedTheme = localStorage.getItem('portfolio-theme');
+if (savedTheme) {
+  body.className = savedTheme;
+  // Set active button
+  themeButtons.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.theme === savedTheme.replace('-theme', '')) {
+      btn.classList.add('active');
+    }
+  });
+  // Update logo for saved theme
+  updateLogo(savedTheme.replace('-theme', ''));
+} else {
+  // Default to batman theme
+  body.className = 'batman-theme';
+  document.querySelector('[data-theme="batman"]').classList.add('active');
+  updateLogo('batman');
+}
+
+// Theme switch functionality
+themeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const theme = button.dataset.theme;
+    const themeClass = `${theme}-theme`;
+    
+    // Remove all theme classes
+    body.className = body.className.replace(/\w*-theme/g, '').trim();
+    
+    // Add new theme class
+    body.classList.add(themeClass);
+    
+    // Update blob shape based on theme
+    updateBlobShape(theme);
+    
+    // Update logo based on theme
+    updateLogo(theme);
+    
+    // Update active button
+    themeButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    
+    // Save theme to localStorage
+    localStorage.setItem('portfolio-theme', themeClass);
+  });
+});
+
+// Function to update logo based on theme
+function updateLogo(theme) {
+  const logoImg = document.getElementById('nav-logo');
+  const footerLogoImg = document.getElementById('footer-logo');
+  
+  if (logoImg) {
+    if (theme === 'batman') {
+      logoImg.src = 'img/batman-logo.png';
+      logoImg.alt = 'Batman Logo';
+      // Set Batman logo sizes for different screen sizes
+      if (window.innerWidth <= 480) {
+        logoImg.style.height = '30px';
+      } else if (window.innerWidth <= 768) {
+        logoImg.style.height = '30px';
+      } else {
+        logoImg.style.height = '30px';
+      }
+    } else if (theme === 'superman') {
+      logoImg.src = 'img/superman-logo.png';
+      logoImg.alt = 'Superman Logo';
+      // Set Superman logo sizes for different screen sizes (10px larger)
+      if (window.innerWidth <= 480) {
+        logoImg.style.height = '40px';
+      } else if (window.innerWidth <= 768) {
+        logoImg.style.height = '45px';
+      } else {
+        logoImg.style.height = '45px';
+      }
+    }
+  }
+  
+  // Update footer logo
+  if (footerLogoImg) {
+    if (theme === 'batman') {
+      footerLogoImg.src = 'img/batman-logo.png';
+      footerLogoImg.alt = 'Batman Logo';
+    } else if (theme === 'superman') {
+      footerLogoImg.src = 'img/superman-logo.png';
+      footerLogoImg.alt = 'Superman Logo';
+    }
+  }
+}
+
+// Function to update blob shape based on theme
+function updateBlobShape(theme) {
+  const blobShape = document.getElementById('blob-shape');
+  const blobFill = document.getElementById('blob-fill');
+  const blobImg = document.querySelector('.home-blob-img');
+  
+  if (theme === 'batman') {
+    // Batman angular/cape-inspired shape - more balanced
+    const batmanPath = 'M100 10 L130 20 L150 35 L170 55 L180 80 L175 105 L165 130 L150 150 L130 165 L100 175 L70 165 L50 150 L35 130 L25 105 L20 80 L30 55 L50 35 L70 20 Z';
+    
+    if (blobShape) blobShape.setAttribute('d', batmanPath);
+    if (blobFill) blobFill.setAttribute('d', batmanPath);
+    
+    // Center image for Batman shape
+    if (blobImg) {
+      blobImg.setAttribute('x', '25');
+      blobImg.setAttribute('y', '20');
+    }
+  } else if (theme === 'superman') {
+    // Superman shield/diamond shape - more proportional
+    const supermanPath = 'M100 15 L140 35 L165 65 L175 100 L165 135 L140 165 L100 175 L60 165 L35 135 L25 100 L35 65 L60 35 Z';
+    
+    if (blobShape) blobShape.setAttribute('d', supermanPath);
+    if (blobFill) blobFill.setAttribute('d', supermanPath);
+    
+    // Center image for Superman shape
+    if (blobImg) {
+      blobImg.setAttribute('x', '25');
+      blobImg.setAttribute('y', '20');
+    }
+  }
+}
+
+// Initialize blob shape on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if (savedTheme) {
+    const theme = savedTheme.replace('-theme', '');
+    updateBlobShape(theme);
+    updateLogo(theme);
+  } else {
+    updateBlobShape('batman'); // Default to batman
+    updateLogo('batman');
+  }
+});
+
+// Update logo sizes on window resize
+window.addEventListener('resize', () => {
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if (savedTheme) {
+    const theme = savedTheme.replace('-theme', '');
+    updateLogo(theme);
+  } else {
+    updateLogo('batman');
+  }
+});
+
 /* MENU SHOW Y HIDDEN */
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
@@ -67,80 +218,6 @@ tabs.forEach((tab) => {
   });
 });
 
-/* SERVICES MODAL */
-const modalViews = document.querySelectorAll(".services-modal"),
-  modalBtns = document.querySelectorAll(".services-button"),
-  modalCloses = document.querySelectorAll(".services-modal-close");
-
-let modal = function (modalClick) {
-  modalViews[modalClick].classList.add("active-modal");
-};
-
-modalBtns.forEach((modalBtn, i) => {
-  modalBtn.addEventListener("click", () => {
-    modal(i);
-  });
-});
-
-modalCloses.forEach((modalClose) => {
-  modalClose.addEventListener("click", () => {
-    modalViews.forEach((modalView) => {
-      modalView.classList.remove("active-modal");
-    });
-  });
-});
-
-/* PORTFOLIO SWIPER  */
-var swiperPortfolio = new Swiper(".portfolio-container", {
-  cssMode: true,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
-
-/* TESTIMONIAL */
-var swiperTestimonial = new Swiper(".testimonial-container", {
-  loop: true,
-  grabCursor: true,
-  spaceBetween: 50,
-
-  breakpoints: {
-    568: {
-      slidesPerView: 2,
-    },
-  },
-});
-
-/* SCROLL SECTIONS ACTIVE LINK */
-const sections = document.querySelectorAll("section[id]");
-
-function scrollActive() {
-  const scrollY = window.pageYOffset;
-
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
-    sectionId = current.getAttribute("id");
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav-menu a[href*=" + sectionId + "]")
-        .classList.add("active-link");
-    } else {
-      document
-        .querySelector(".nav-menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
-    }
-  });
-}
-window.addEventListener("scroll", scrollActive);
-
 /* CHANGE BACKGROUND HEADER */
 function scrollHeader() {
   const nav = document.getElementById("header");
@@ -148,7 +225,6 @@ function scrollHeader() {
   if (this.scrollY >= 80) nav.classList.add("scroll-header");
   else nav.classList.remove("scroll-header");
 }
-window.addEventListener("scroll", scrollHeader);
 
 /* SHOW SCROLL UP */
 function scrollUp() {
@@ -157,7 +233,6 @@ function scrollUp() {
   if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
   else scrollUp.classList.remove("show-scroll");
 }
-window.addEventListener("scroll", scrollUp);
 
 /* DARK LIGHT THEME */
 const themeButton = document.getElementById("theme-button");
@@ -185,36 +260,171 @@ if (selectedTheme) {
   );
 }
 
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-  // We save the theme and the current icon that the user chose
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
-});
 
-
+// Initialize EmailJS
+(function() {
+  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key from EmailJS
+})();
 
 // Contact Form
 const form = document.getElementById("contact-form");
-form.addEventListener("submit", sendEmail);
+if (form) {
+  form.addEventListener("submit", sendEmail);
+}
+
 function sendEmail(e) {
-    e.preventDefault();
-    let name = document.getElementById("name-input").value;
-    let email = document.getElementById("email-input").value;
-    let subject = document.getElementById("message-input").value;
+  e.preventDefault();
+  
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.innerHTML;
+  
+  // Show loading state
+  submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin button-icon"></i>';
+  submitBtn.disabled = true;
+  
+  // Get form data
+  let name = document.getElementById("name-input").value;
+  let email = document.getElementById("email-input").value;
+  let subject = document.getElementById("subject-input").value;
+  let message = document.getElementById("message-input").value;
 
-    let body = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}`;
-    Swal.fire(
-        `Thank you ${name} !`,
-        "Your message has been successfully sent! Thank you for reaching out. I'll get back to you as soon as possible.",
-        'success'
-      )
+  // Prepare template parameters
+  const templateParams = {
+    from_name: name,
+    from_email: email,
+    subject: subject,
+    message: message,
+    to_email: 'rupeshdhakal2@gmail.com'
+  };
 
-    //   empty all input fields
-    name = "";
-    email = "";
-    subject = "";
+  // Send email using EmailJS
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      
+      // Show success notification
+      showNotification(`Thank you ${name}! Your message has been sent successfully. I'll get back to you soon.`, 'success');
+      
+      // Reset form
+      form.reset();
+      
+      // Reset button
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    })
+    .catch(function(error) {
+      console.log('FAILED...', error);
+      
+      // Show error notification
+      showNotification('Failed to send message. Please try again or contact me directly.', 'error');
+      
+      // Reset button
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    });
+}
+
+// Notification function
+function showNotification(message, type) {
+  // Remove existing notifications
+  const existingNotification = document.querySelector('.notification');
+  if (existingNotification) {
+    existingNotification.remove();
   }
+  
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `notification ${type}`;
+  notification.innerHTML = `
+    <div class="notification-content">
+      <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+      <span>${message}</span>
+      <button class="notification-close">&times;</button>
+    </div>
+  `;
+  
+  // Add notification styles
+  notification.style.cssText = `
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10000;
+    background: ${type === 'success' ? '#10b981' : '#ef4444'};
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    max-width: 400px;
+    font-family: var(--body-font);
+  `;
+  
+  notification.querySelector('.notification-content').style.cssText = `
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  `;
+  
+  notification.querySelector('.notification-close').style.cssText = `
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: auto;
+  `;
+  
+  // Add to page
+  document.body.appendChild(notification);
+  
+  // Animate in
+  setTimeout(() => {
+    notification.style.transform = 'translateX(0)';
+  }, 100);
+  
+  // Auto remove after 5 seconds
+  setTimeout(() => {
+    notification.style.transform = 'translateX(100%)';
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.remove();
+      }
+    }, 300);
+  }, 5000);
+  
+  // Close button functionality
+  notification.querySelector('.notification-close').addEventListener('click', () => {
+    notification.style.transform = 'translateX(100%)';
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.remove();
+      }
+    }, 300);
+  });
+}
+
+/* CALCULATE YEARS OF EXPERIENCE */
+function calculateExperience() {
+  const startYear = 2020;
+  const currentYear = new Date().getFullYear();
+  const experienceYears = currentYear - startYear;
+  
+  const experienceElement = document.getElementById('experience-years');
+  if (experienceElement) {
+    experienceElement.textContent = `${experienceYears}+`;
+    console.log(`Experience calculated: ${experienceYears}+ years`);
+  }
+}
+
+// Calculate experience when DOM is loaded and also when script loads
+document.addEventListener('DOMContentLoaded', () => {
+  calculateExperience();
+});
+
+// Also try to calculate immediately in case DOM is already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', calculateExperience);
+} else {
+  calculateExperience();
+}
