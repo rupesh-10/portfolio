@@ -2,28 +2,55 @@
 const projectsData = [
   {
     id: 1,
-    title: "Global English Campus",
-    description: "An AI-based online learning system that helps students improve their English skills in speaking, writing, reading, and listening.",
-    image: "img/portfolios/gec.png",
-    url: "https://globalenglishcampus.com",
-    technologies: ["AI", "Education", "Web App"],
-    featured: true
+    title: "Vanilla HR",
+    description: "AI-powered hiring platform that streamlines large-scale recruitment by finding the best candidates efficiently.",
+    image: "img/portfolios/vanillahr.png",
+    url: "https://vanillahr.com",
+    featured: true,
+    technologies: ["Hiring Platform", "AI", "Web App", "React Js"]
   },
   {
     id: 2,
-    title: "Workzone 1",
-    description: "A powerful time tracking and activity recording tool that monitors productivity by tracking app usage, capturing screenshots, and recording user activity.",
-    image: "img/portfolios/workzone.png",
-    url: "https://workzone1.com",
-    technologies: ["Productivity", "Tracking", "Analytics"],
-    featured: true
+    title: "Lighting Illusion",
+    description: "Leading Australian eCommerce store for stylish, climate-suited lighting and ceiling fans.",
+    image: "img/portfolios/lighting-illusion.png",
+    url: "https://lightingillusions.com.au",
+    featured: true,
+    technologies: ["E-commerce", "Web App", "Next Js", "Laravel"]
   },
   {
     id: 3,
-    title: "DVX Entertainment",
-    description: "A German entertainment company website that showcases mobile games enjoyed by young people worldwide.",
+    title: "Calibo Australia",
+    description: "Premium Aussie-designed lighting and fans. Built with a monorepo shared with Lighting Illusions.",
+    image: "img/portfolios/calibo.png",
+    url: "https://calibo.com.au",
+    featured: true,
+    technologies: ["E-commerce", "Web App", "Mono Repo"]
+  },
+  {
+    id: 4,
+    title: "Global English Campus",
+    description: "AI-based learning platform to improve English speaking, writing, reading, and listening skills.",
+    image: "img/portfolios/gec.png",
+    url: "https://globalenglishcampus.com",
+    technologies: ["AI", "Education", "Web App", "Vue Js"],
+    featured: true
+  },
+  {
+    id: 5,
+    title: "Workzone 1",
+    description: "Time tracking tool that monitors productivity via app usage, screenshots, and user activity.",
+    image: "img/portfolios/workzone.png",
+    url: "https://workzone1.com",
+    technologies: ["Productivity", "Tracking", "Analytics", "Electron JS"],
+    featured: true
+  },
+  {
+    id: 6,
+    title: "DVX Games",
+    description: "German entertainment site showcasing mobile games loved by youth around the globe.",
     image: "img/portfolios/dvx.png",
-    url: "https://dvx.net/",
+    url: "https://dvxgames.net/",
     technologies: ["Entertainment", "Mobile Games", "Website"],
     featured: true
   }

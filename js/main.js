@@ -15,11 +15,21 @@ if (savedTheme) {
   });
   // Update logo for saved theme
   updateLogo(savedTheme.replace('-theme', ''));
+  
+  // Update theme content if function is available
+  if (typeof updateThemeContent === 'function') {
+    updateThemeContent(savedTheme.replace('-theme', ''));
+  }
 } else {
   // Default to batman theme
   body.className = 'batman-theme';
   document.querySelector('[data-theme="batman"]').classList.add('active');
   updateLogo('batman');
+  
+  // Set default theme content
+  if (typeof updateThemeContent === 'function') {
+    updateThemeContent('batman');
+  }
 }
 
 // Theme switch functionality
@@ -40,12 +50,18 @@ themeButtons.forEach(button => {
     // Update logo based on theme
     updateLogo(theme);
     
+    // Update theme content
+    if (typeof updateThemeContent === 'function') {
+      updateThemeContent(theme);
+    }
+    
     // Update active button
     themeButtons.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
     
     // Save theme to localStorage
     localStorage.setItem('portfolio-theme', themeClass);
+    localStorage.setItem('selectedTheme', theme);
   });
 });
 
@@ -151,31 +167,83 @@ window.addEventListener('resize', () => {
 
 /* MENU SHOW Y HIDDEN */
 const navMenu = document.getElementById("nav-menu"),
-  navToggle = document.getElementById("nav-toggle"),
-  navClose = document.getElementById("nav-close");
+  navToggle = document.getElementById("nav-toggle");
 
-/* MENU SHOW */
+/* MENU SHOW/HIDE */
 if (navToggle) {
   navToggle.addEventListener("click", () => {
-    navMenu.classList.add("show-menu");
-  });
-}
-
-/* MENU HIDDEN */
-if (navClose) {
-  navClose.addEventListener("click", () => {
-    navMenu.classList.remove("show-menu");
+    navMenu.classList.toggle("show-menu");
+    
+    // Toggle body scroll lock
+    if (navMenu.classList.contains('show-menu')) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+    
+    // Toggle icon between menu and close
+    const icon = navToggle.querySelector('i');
+    if (icon) {
+      if (navMenu.classList.contains('show-menu')) {
+        icon.setAttribute('data-lucide', 'x');
+      } else {
+        icon.setAttribute('data-lucide', 'menu');
+      }
+      
+      // Reinitialize lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
   });
 }
 
 /* REMOVE MENU MOBILE */
-const navLink = document.querySelectorAll(".nav-link");
+const navLink = document.querySelectorAll(".nav__link");
 
 function linkAction() {
   const navMenu = document.getElementById("nav-menu");
   navMenu.classList.remove("show-menu");
+  
+  // Remove body scroll lock
+  document.body.classList.remove('menu-open');
+  
+  // Reset toggle icon to menu
+  const navToggle = document.getElementById("nav-toggle");
+  if (navToggle) {
+    const icon = navToggle.querySelector('i');
+    if (icon) {
+      icon.setAttribute('data-lucide', 'menu');
+      
+      // Reinitialize lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+  }
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (navMenu && navToggle && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+    navMenu.classList.remove('show-menu');
+    
+    // Remove body scroll lock
+    document.body.classList.remove('menu-open');
+    
+    // Reset toggle icon to menu
+    const icon = navToggle.querySelector('i');
+    if (icon) {
+      icon.setAttribute('data-lucide', 'menu');
+      
+      // Reinitialize lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+  }
+});
 
 /* ACCORDION SKILLS */
 const skillsContent = document.getElementsByClassName(
