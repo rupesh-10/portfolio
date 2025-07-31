@@ -82,10 +82,18 @@
 
 ## 🚀 Quick Wins (Immediate Actions)
 
-1. **Submit to Search Engines**:
+1. **Submit to Search Engines**: ✅ **READY FOR SETUP**
    ```
-   - Google Search Console
-   - Bing Webmaster Tools
+   ✅ Google Search Console verification code added
+   ✅ Sitemap.xml created and ready for submission
+   📋 Bing Webmaster Tools (next step)
+   
+   📋 ACTION REQUIRED:
+   1. Go to https://search.google.com/search-console/
+   2. Add property: https://rupesh-10.github.io/portfolio/
+   3. Choose HTML tag verification method
+   4. Replace "REPLACE_WITH_YOUR_VERIFICATION_CODE" in index.html
+   5. Submit sitemap: sitemap.xml
    ```
 
 2. **Create Sitemap**: Generate and submit XML sitemap ✅
