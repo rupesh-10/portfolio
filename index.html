@@ -33,6 +33,78 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
   <link rel="apple-touch-icon" href="./img/favicon.ico">
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB71RW8GB7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QB71RW8GB7', {
+      page_title: 'Rupesh Dhakal Portfolio',
+      page_location: window.location.href,
+      send_page_view: true
+    });
+    
+    // Enhanced ecommerce tracking for portfolio interactions
+    gtag('config', 'G-QB71RW8GB7', {
+      custom_map: {
+        'custom_parameter_1': 'section_viewed',
+        'custom_parameter_2': 'contact_method'
+      }
+    });
+    
+    // Track custom events for portfolio engagement
+    function trackPortfolioEvent(eventName, parameters = {}) {
+      gtag('event', eventName, {
+        event_category: 'Portfolio Engagement',
+        event_label: parameters.label || '',
+        value: parameters.value || 1,
+        ...parameters
+      });
+    }
+    
+    // Track section views
+    function trackSectionView(sectionName) {
+      trackPortfolioEvent('section_view', {
+        event_label: sectionName,
+        section_name: sectionName
+      });
+    }
+    
+    // Track project views
+    function trackProjectView(projectName) {
+      trackPortfolioEvent('project_view', {
+        event_label: projectName,
+        project_name: projectName
+      });
+    }
+    
+    // Track contact attempts
+    function trackContactAttempt(contactMethod) {
+      trackPortfolioEvent('contact_attempt', {
+        event_label: contactMethod,
+        contact_method: contactMethod
+      });
+    }
+    
+    // Track CV downloads
+    function trackCVDownload() {
+      trackPortfolioEvent('cv_download', {
+        event_label: 'CV Download',
+        file_name: 'Rupesh_Dhakal_CV.pdf'
+      });
+    }
+    
+    // Track external link clicks
+    function trackExternalLink(linkName, url) {
+      trackPortfolioEvent('external_link_click', {
+        event_label: linkName,
+        link_url: url,
+        outbound: true
+      });
+    }
+  </script>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -505,6 +577,8 @@
       
       <!-- Bootstrap JS -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Analytics JS -->
+      <script src="js/analytics.js"></script>
       <!-- Theme Content JS -->
       <script src="js/theme-content.js"></script>
       <!-- Projects JS -->
