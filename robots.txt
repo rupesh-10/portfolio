@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rupesh-10.github.io/portfolio/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Allow common assets
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /fonts/
+Allow: /pdf/
+
+# Disallow any private or unnecessary files
+Disallow: /scss/
+Disallow: *.css.map
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.vscode/
