@@ -6,7 +6,7 @@ const testimonialsData = [
     avatar: "https://globalenglishcampus.com/images/teams/globalenglishcampus.com/en/1653736687.png",
     rating: 5,
     review: "Rupesh is a very skilled front end technician who has supported our learning management software development for over a year. He is also a gentleman, he communicates well, and he always performs highly above expectations, contributing his own initiative and creative care into what he does. Highly recommended.",
-    position: "CEO, English Campus"
+    position: "CEO, Global English Campus"
   },
   {
     id: 2,

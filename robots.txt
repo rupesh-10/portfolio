@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rupesh-10.github.io/portfolio/sitemap.xml
+Sitemap: https://rupeshdhakal.com.np/portfolio/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

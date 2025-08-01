@@ -20,7 +20,7 @@
 
 ### Step 3: Set Up Data Stream
 1. Choose "Web" platform
-2. **Website URL**: `https://rupesh-10.github.io/portfolio/`
+2. **Website URL**: `https://rupeshdhakal.com.np/portfolio/`
 3. **Stream Name**: "Portfolio Website"
 4. **Enhanced Measurement**: Enable all options
 

@@ -9,7 +9,7 @@
 
 ### Step 2: Add Your Property
 1. **Choose Property Type**: Select "URL prefix" 
-2. **Enter URL**: `https://rupesh-10.github.io/portfolio/`
+2. **Enter URL**: `https://rupeshdhakal.com.np/portfolio/`
 3. Click "Continue"
 
 ### Step 3: Verify Ownership
@@ -32,7 +32,7 @@ After verification:
 2. Enter: `sitemap.xml`
 3. Click "Submit"
 
-Your sitemap URL will be: `https://rupesh-10.github.io/portfolio/sitemap.xml`
+Your sitemap URL will be: `https://rupeshdhakal.com.np/portfolio/sitemap.xml`
 
 ## 📊 What to Monitor in Search Console
 

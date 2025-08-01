@@ -90,7 +90,7 @@
    
    📋 ACTION REQUIRED:
    1. Go to https://search.google.com/search-console/
-   2. Add property: https://rupesh-10.github.io/portfolio/
+   2. Add property: https://rupeshdhakal.com.np/portfolio/
    3. Choose HTML tag verification method
    4. Replace "REPLACE_WITH_YOUR_VERIFICATION_CODE" in index.html
    5. Submit sitemap: sitemap.xml
